@@ -1,0 +1,6 @@
+/home/Wihy/Projects/GameOfLife/bin/Debug/GameOfLife.exe
+/home/Wihy/Projects/GameOfLife/bin/Debug/GameOfLife.pdb
+/home/Wihy/Projects/GameOfLife/obj/Debug/GameOfLife.csproj.AssemblyReference.cache
+/home/Wihy/Projects/GameOfLife/obj/Debug/GameOfLife.csproj.CoreCompileInputs.cache
+/home/Wihy/Projects/GameOfLife/obj/Debug/GameOfLife.exe
+/home/Wihy/Projects/GameOfLife/obj/Debug/GameOfLife.pdb
