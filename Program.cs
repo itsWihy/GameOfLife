@@ -9,8 +9,8 @@ namespace GameOfLife
         {
             var matrices = new Matrices();
             
-            Console.WriteLine("Draw out the matrix: \n\"#\" for life\n\" \" for dead\n\",\" for a new line");
-            var enteredMatrix = "#        #, #      # ,  #    #  ,   #  #   ,    ##    ,   #  #   ,  #    #  , #      # ,#        #";//"#    #   #,###   ##  ,##  ##  ##, # # # #, # # ###, ###";//Console.ReadLine();
+          //  Console.WriteLine("Draw out the matrix: \n\"#\" for life\n\" \" for dead\n\",\" for a new line");
+            var enteredMatrix = "#        #, #      # ,  #    #  ,   #  #   ,    ##    ,   #  #   ,  #    #  , #      # ,#        #";//Console.ReadLine();
             
             if (string.IsNullOrEmpty(enteredMatrix)) return;
             
