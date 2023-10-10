@@ -2,9 +2,9 @@ using System;
 
 namespace GameOfLife
 {
-    public class Matrices
+    public abstract class Matrices
     {
-        public void PrintMatrix(int[,] matrix)
+        public static void PrintMatrix(int[,] matrix)
         {
             var matrixSize = matrix.Length / Math.Sqrt(matrix.Length);
 
@@ -21,20 +21,24 @@ namespace GameOfLife
             }
         }
 
-        public int[,] NextMatrix(int[,] matrix)
+        //Test this function extensively.
+        public static int[,] NextMatrix(int[,] matrix)
         {
+            var originalMatrix = (int[,])matrix.Clone();
+            
             for (var i = 0; i < Constants.MatrixRows; i++)
             {
                 for (var j = 0; j < Constants.MatrixColumns; j++)
                 {
-                    var neighbors = CountNeighbors(matrix, i, j);
-                    matrix[i, j] = LivingState(neighbors, matrix[i, j]);
+                    var neighbors = CountNeighbors(originalMatrix, i, j);
+                    matrix[i, j] = LivingState(neighbors, originalMatrix[i, j]);
                 }
             }
             return matrix;
         }
-
-        private static int LivingState(int neighbors, int state)
+        
+        //Test this function extensively.
+        public static int LivingState(int neighbors, int state)
         {
             if (state != 1) return neighbors == 3 ? 1 : 0;
             
@@ -44,7 +48,7 @@ namespace GameOfLife
             return 1;
         }
         
-        private static int CountNeighbors(int[,] matrix, int row, int column)
+        public static int CountNeighbors(int[,] matrix, int row, int column)
         {
             var neighbors = 0;
             

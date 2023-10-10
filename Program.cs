@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace GameOfLife
@@ -7,20 +8,14 @@ namespace GameOfLife
     {
         public static void Main(string[] args)
         {
-            var matrices = new Matrices();
-            
-          //  Console.WriteLine("Draw out the matrix: \n\"#\" for life\n\" \" for dead\n\",\" for a new line");
-            var enteredMatrix = "#        #, #      # ,  #    #  ,   #  #   ,    ##    ,   #  #   ,  #    #  , #      # ,#        #";//Console.ReadLine();
-            
-            if (string.IsNullOrEmpty(enteredMatrix)) return;
+            var matrix = new int[Constants.MatrixRows, Constants.MatrixColumns];
+            var enteredMatrix = ",,,,,#########,,,,,";//  ",    #,    #,   #,   #,   #,   #,    #,   #,   #,   #";// "#        #, #      # ,  #    #  ,   #  #   ,    ##    ,   #  #   ,  #    #  , #      # ,#        #";
             
             enteredMatrix = Regex.Replace(enteredMatrix, "[^# ,]+", "");
             
-            var matrix = new int[Constants.MatrixRows, Constants.MatrixColumns];
-            
             int row = 0, column = 0;
             
-            foreach (var character in enteredMatrix)
+            foreach (var character in enteredMatrix.Where(character => row <= 9))
             {
                 if (character == ',' || column >= 10)
                 {
@@ -34,12 +29,12 @@ namespace GameOfLife
             }
 
             Console.WriteLine("Entered Matrix:");
-            matrices.PrintMatrix(matrix);
+            Matrices.PrintMatrix(matrix);
 
             for (var i = 1; i < 11; i++)
             {
-                Console.WriteLine($"MATRIX ITERATION ({i}) : ");
-                 matrices.PrintMatrix(matrices.NextMatrix(matrix));
+                Console.WriteLine($"MATRIX ITERATION ({i}) : "); 
+                Matrices.PrintMatrix(Matrices.NextMatrix(matrix));
             }
         }
 
