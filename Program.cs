@@ -9,7 +9,7 @@ namespace GameOfLife
         public static void Main(string[] args)
         {
             var matrix = new int[Constants.MatrixRows, Constants.MatrixColumns];
-            var enteredMatrix = ",,,,,#########,,,,,";//  ",    #,    #,   #,   #,   #,   #,    #,   #,   #,   #";// "#        #, #      # ,  #    #  ,   #  #   ,    ##    ,   #  #   ,  #    #  , #      # ,#        #";
+            var enteredMatrix = "#        #, #      # ,  #    #  ,   #  #   ,    ##    ,   #  #   ,  #    #  , #      # ,#        #";
             
             enteredMatrix = Regex.Replace(enteredMatrix, "[^# ,]+", "");
             

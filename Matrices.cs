@@ -21,7 +21,6 @@ namespace GameOfLife
             }
         }
 
-        //Test this function extensively.
         public static int[,] NextMatrix(int[,] matrix)
         {
             var originalMatrix = (int[,])matrix.Clone();
@@ -36,9 +35,8 @@ namespace GameOfLife
             }
             return matrix;
         }
-        
-        //Test this function extensively.
-        public static int LivingState(int neighbors, int state)
+
+        private static int LivingState(int neighbors, int state)
         {
             if (state != 1) return neighbors == 3 ? 1 : 0;
             
@@ -47,8 +45,8 @@ namespace GameOfLife
 
             return 1;
         }
-        
-        public static int CountNeighbors(int[,] matrix, int row, int column)
+
+        private static int CountNeighbors(int[,] matrix, int row, int column)
         {
             var neighbors = 0;
             
